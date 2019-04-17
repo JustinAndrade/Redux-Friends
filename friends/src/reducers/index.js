@@ -1,24 +1,9 @@
+import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from '../actions'
+
 const initialState = {
     deletingFriend: false,
     fetchingFriends: false,
-    friends: [{
-        id: 1,
-        name: 'Justin',
-        age: 26,
-        email: 'justin@lambdaschool.com'
-    },
-    {
-        id: 2,
-        name: 'Shirley',
-        age: 42,
-        email: 'shirley@lambdaschool.com'
-    },
-    {
-        id: 3,
-        name: 'Ali',
-        age: 32,
-        email: 'ali@lambdaschool.com'
-    }],
+    friends: [],
     loggingIn: false,
     savingFriends: false,
     updatingFriend: false,
@@ -27,7 +12,19 @@ const initialState = {
 
 export const reducer = ( state = initialState, action ) => {
     switch (action.type) {
+        case FETCH_START:
+            return {
+                ...state,
+            }
+        case FETCH_SUCCESS:
+            return {
+                ...state,
+            }
+        case FETCH_ERROR:
+            return {
+                ...state,
+            }
         default:
             return state;
+        }
     }
-};
