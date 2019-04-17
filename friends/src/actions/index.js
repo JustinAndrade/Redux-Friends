@@ -6,8 +6,8 @@ export const FETCH_ERROR = 'FETCH_ERROR';
 
 export const getFriends = () => dispatch => {
     dispatch({ type: FETCH_START })
-    const request = axios.get('http://localhost:5000/')
+    const request = axios.get('http://localhost:5000/friends')
 
     request.then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data}))
-    request.err(err => dispatch({ type: FETCH_ERROR, payload: err }))
+    request.catch(err => dispatch({ type: FETCH_ERROR, payload: err }));
 }
